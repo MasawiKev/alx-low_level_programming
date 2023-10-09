@@ -29,17 +29,17 @@ char *create_buffer(char *file)
 
 /**
  * close_file - Closes file descriptors.
- * @file_d: The file descriptor to be closed.
+ * @fd: The file descriptor to be closed.
  */
-void close_file(int file_d)
+void close_file(int fd)
 {
 	int c;
 
-	c = close(file_d);
+	c = close(fd);
 
 	if (c == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't close file_d %d\n", file_d);
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd);
 		exit(100);
 	}
 }
